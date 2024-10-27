@@ -1,0 +1,96 @@
+<!--
+**************************************************
+* APP NAME: Runden App                           *
+* DEVELOPER: Timm Reinisch                       *
+* YEAR: 2024                                     *
+**************************************************
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runde richtig - Schloss öffnen</title>
+    <link rel="stylesheet" href="../common/css/styles.css">
+    <link rel="stylesheet" href="css/runden.css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <!-- Score-Anzeige -->
+            <div id="score-display">Score: 0</div>
+
+            <h1>Runde richtig und öffne so das Schloss</h1>
+
+            <!-- Modus Auswahl -->
+            <div class="mode-buttons">
+                <button id="beginner-mode">Anfänger</button>
+                <button id="pro-mode">Profi</button>
+            </div>
+
+            <!-- Aufgabe und Hinweis in einem Container -->
+            <div class="task-container">
+                <div class="task">
+                    <p id="instruction">Runde die Zahl zu vollen 100ern</p>
+                </div>
+                <div id="hints" class="hints"></div>
+            </div>
+            <!-- Aktionsbereich (Schloss) -->
+            <div class="lock-area">
+                <div class="lock">
+                    <!-- Hintergrundgrafik des Schlosses wird hier als CSS-Hintergrund eingefügt -->
+                    <div class="digit-column">
+                        <div class="arrow up">▲</div>
+                        <div class="digit">0</div>
+                        <div class="arrow down">▼</div>
+                    </div>
+                    <div class="digit-column">
+                        <div class="arrow up">▲</div>
+                        <div class="digit">0</div>
+                        <div class="arrow down">▼</div>
+                    </div>
+                    <div class="digit-column">
+                        <div class="arrow up">▲</div>
+                        <div class="digit">0</div>
+                        <div class="arrow down">▼</div>
+                    </div>
+                    <div class="digit-column">
+                        <div class="arrow up">▲</div>
+                        <div class="digit">0</div>
+                        <div class="arrow down">▼</div>
+                    </div>
+                    <div class="digit-column">
+                        <div class="arrow up">▲</div>
+                        <div class="digit">0</div>
+                        <div class="arrow down">▼</div>
+                    </div>
+                    <div class="digit-column">
+                        <div class="arrow up">▲</div>
+                        <div class="digit">0</div>
+                        <div class="arrow down">▼</div>
+                    </div>
+                    <div class="digit-column">
+                        <div class="arrow up">▲</div>
+                        <div class="digit">0</div>
+                        <div class="arrow down">▼</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Überprüfen-Button -->
+            <button id="check-result">Überprüfen</button>
+
+            <!-- Ergebnisnachricht -->
+            <div id="result-message" class="result-message"></div>
+        </div>
+    </main>
+    <script type="module" src="js/runden.js"></script>
+
+    <!-- Sound für das richtige Ergebnis -->
+    <audio id="success-sound" src="sounds/success.mp3"></audio>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+#! /bin/zsh
+
+rsync --progress --partial --recursive * root@giuseppe:/var/www/cluez.de/web/antelope/
+cp -r antelopes/* drsvanhay.github.io/antelopes/
+cp -r js/* drsvanhay.github.io/js/
+cp -r css/* drsvanhay.github.io/css/
+cp index.html drsvanhay.github.io/
+cd drsvanhay.github.io
+git add --all
+git commit -m "push.zsh commit"
+git push -u origin main

@@ -1,0 +1,61 @@
+<!--
+**************************************************
+* APP NAME: Würfel App                           *
+* DEVELOPER: Timm Reinisch                       *
+* YEAR: 2024                                     *
+**************************************************
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Würfel zählen</title>
+    <link rel="stylesheet" href="../common/css/styles.css">
+    <link rel="stylesheet" href="css/wuerfel.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <!-- Score-Anzeige -->
+            <div id="score-display">Score: 0</div>
+
+            <h1>Zähle die Würfel!</h1>
+            
+            <!-- Modus Auswahl -->
+            <div class="mode-buttons">
+                <button id="beginner-mode">Anfänger</button>
+                <button id="pro-mode">Profi</button>
+            </div>
+
+            <!-- Aufgabe und Hinweis in einem Container -->
+            <div class="task-container">
+                <div class="task">
+                    <p id="instruction">Zähle die Würfel.</p>
+                </div>
+                <div id="hints" class="hints">Denk daran die versteckten Würfel auch zu zählen</div>
+            </div>
+
+            <!-- Zeichenfläche (Kästchenpapier) -->
+            <div id="wuerfel-grid-container">
+                <canvas id="gridCanvas"></canvas>
+            </div>
+
+            <!-- Eingabefeld für die Anzahl der Steine -->
+            <div style="display: inline-block; margin-right: 10px;">
+                <label for="stoneCount">Anzahl der Steine:</label>
+                <input type="number" id="stoneCount" value="16" min="1" max="64">
+            </div>
+
+
+            <!-- Überprüfen-Button -->
+            <button id="check-result">Überprüfen</button>
+
+            <!-- Ergebnisnachricht -->
+            <div id="result-message" class="result-message"></div>
+        </div>
+    </main>
+    <script  type="module" src="js/wuerfel.js"></script>
+</body>
+</html>

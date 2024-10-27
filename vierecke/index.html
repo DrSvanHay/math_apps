@@ -1,0 +1,54 @@
+<!--
+**************************************************
+* APP NAME: Vierecke App                           *
+* DEVELOPER: Timm Reinisch                       *
+* YEAR: 2024                                     *
+**************************************************
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vierecke zeichnen</title>
+    <link rel="stylesheet" href="../common/css/styles.css">
+    <link rel="stylesheet" href="css/vierecke.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <!-- Score-Anzeige -->
+            <div id="score-display">Score: 0</div>
+    
+            <h1>Verschiebe die Punkte und zeichne eine Form</h1>
+            
+            <!-- Modus Auswahl -->
+            <div class="mode-buttons">
+                <button id="beginner-mode">Anfänger</button>
+                <button id="pro-mode">Profi</button>
+            </div>
+    
+            <!-- Aufgabe und Hinweis in einem Container -->
+            <div class="task-container">
+                <div class="task">
+                    <p id="instruction">Anweisung wird geladen...</p>
+                </div>
+                <div id="hints" class="hints"></div>
+            </div>
+    
+            <!-- Zeichenfläche (Kästchenpapier) -->
+            <div id="vierecke-grid-container">
+                <canvas id="gridCanvas"></canvas>
+            </div>
+    
+            <!-- Überprüfen-Button -->
+            <button id="check-result">Überprüfen</button>
+    
+            <!-- Ergebnisnachricht -->
+            <div id="result-message" class="result-message"></div>
+        </div>
+    </main>
+    <script  type="module" src="js/vierecke.js"></script>
+</body>
+</html>

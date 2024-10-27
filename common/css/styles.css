@@ -1,0 +1,173 @@
+/* Allgemeine Einstellungen und Dark Mode */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container für zentrierten Inhalt */
+.container {
+    text-align: center;
+    width: 80%; /* Nimmt 80% der Breite des Viewports ein */
+    max-width: 1200px; /* Optional: Begrenzung der maximalen Breite für größere Bildschirme */
+    margin: 0 auto; /* Zentriert den Container */
+}
+
+/* Überschrift */
+h1 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 2px solid #4caf50;
+    margin: -2px;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+/* Überprüfen-Button */
+#check-result {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 2px solid #4caf50;
+    margin: -2px;   
+    padding: 0.5rem 1rem;
+    margin: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Score-Anzeige */
+#score-display {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #4caf50; /* Grün, um positive Stimmung zu vermitteln */
+    text-align: center;
+}
+
+.task-container {
+    background-color: #ffeb3b; /* Gelber Hintergrund */
+    color: #333; /* Dunkle Schriftfarbe */
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    display: inline-block;
+    width: 90%;
+}
+
+/* Responsive Anpassungen für iPads und kleinere Bildschirme */
+@media only screen and (max-width: 1024px) {
+
+    html {
+        font-size: 12px; /* Skalieren auf 14px */
+    }
+
+    .task-container {
+        width:700px;
+    }
+
+
+}
+
+/* Für Smartphones */
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+}
+
+
+
+/* Modus Buttons */
+.mode-buttons {
+    margin-bottom: 20px;
+}
+
+
+
+button:hover {
+    border: 4px solid #4caf50;
+    margin:-4px;
+    background-color: #1e1e1e;
+}
+
+
+
+#check-result:hover {
+    border: 4px solid #4caf50;
+    margin: -4px;
+}
+
+/* Ergebnisnachricht */
+.result-message {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+
+
+/* Hervorhebung des aktiven Modus-Buttons */
+.mode-buttons .active {
+    background-color: #4caf50; /* Grün für den aktiven Button */
+    color: #ffffff;
+}
+
+/* Die pending-Animation (von voll-grün zu keiner Hintergrundfarbe) */
+.mode-buttons .pending {
+    animation: pendingAnimation 4s infinite cubic-bezier(.5,0,.5,1);
+}
+
+@keyframes pendingAnimation {
+    0% {
+        background-color: green;
+        opacity: 1;
+    }
+    50% {
+        background-color: transparent;
+        opacity: 1;
+    }
+    100% {
+        background-color: green;
+        opacity: 1;
+    }
+}
+
+
+
+/* Container für Aufgabe und Hinweis */
+
+
+/* Aufgabe-Text */
+.task p {
+    font-size: 1.5rem;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+/* Hinweis-Text im Anfänger-Modus */
+.hints {
+    font-size: 1.2rem; /* Größere Schriftgröße */
+}

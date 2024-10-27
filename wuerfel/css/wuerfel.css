@@ -1,0 +1,21 @@
+/* Canvas-Bereich */
+#wuerfel-grid-container {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gridCanvas {
+    background-color: black;
+    border: 1px solid #555;
+}
+
+#stoneCount {
+    width: 80px;  /* Vergrößert das Eingabefeld */
+    padding: 10px;  /* Fügt mehr Platz innerhalb des Felds hinzu */
+    font-size: 18px;  /* Erhöht die Schriftgröße */
+    border: 2px solid #333;  /* Dickere Umrandung */
+    border-radius: 5px;  /* Leicht abgerundete Ecken */
+}

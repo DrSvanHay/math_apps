@@ -1,0 +1,56 @@
+/* Aktionsbereich (Schloss) */
+.lock-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.lock {
+    display: flex;
+    background-image: url('../art/schloss_hintergrund.svg'); /* Hier kann die Schloss-Grafik eingefügt werden */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    padding-top:180px;
+}
+
+/* Spalten für Ziffern */
+.digit-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+}
+
+/* Pfeile und Ziffern */
+.arrow {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.digit {
+    font-size: 2rem;
+    margin: 10px 0;
+    width: 30px; /* Festlegen einer festen Breite */
+    height: 50px; /* Festlegen einer festen Höhe */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000; /* Schwarzer Rahmen */
+}
+
+.selected-digit {
+    border: 2px solid #4caf50; /* Grüner Rahmen */
+}
+
+.deciding-digit {
+    border-bottom: 2px solid #ffffff; /* Weißer Strich darunter */
+}
+
+/* Versteckt Ziffern und Pfeile */
+.hidden .digit,
+.hidden .arrow {
+    visibility: hidden;
+}
+
