@@ -16,7 +16,7 @@ fi
 git add .
 git commit -m "Initial commit"
 
-REMOTE_URL=https://github.com/DrSvanHay/math_apps.git
+REMOTE_URL=https://drsvanhay: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@github.com/DrSvanHay/math_apps.git
 
 # Remote-URL setzen (entfernt vorherige Remote-URLs, falls vorhanden)
 git remote remove origin 2>/dev/null
