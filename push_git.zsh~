@@ -1,9 +1,5 @@
 #! /bin/zsh
 
-rsync --progress --partial --recursive * root@giuseppe:/var/www/cluez.de/web/mathe/
-
-exit
-
 # Setze die Variablen
 #LOCAL_DIR="/pfad/zum/lokalen/verzeichnis" # Pfad zu deinem lokalen Verzeichnis
 REMOTE_URL="https://github.com/DrSvanHay/math_apps.git" # GitHub-URL des Repos
@@ -20,6 +16,7 @@ fi
 git add .
 git commit -m "Initial commit"
 
+REMOTE_URL=https://DrSvanHay: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@github.com/DrSvanHay/math_apps.git
 # Remote-URL setzen (entfernt vorherige Remote-URLs, falls vorhanden)
 git remote remove origin 2>/dev/null
 git remote add origin "$REMOTE_URL"
