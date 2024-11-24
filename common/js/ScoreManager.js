@@ -9,10 +9,10 @@ class ScoreManager {
         // Variablen, um die Punkte und den Modus zu speichern
         this.pointsForSuccess = 0;
         this.pointsForFailure = 0;
-        this.pointsForSuccessBeginner = 0;
-        this.pointsForFailureBeginner = 0;
-        this.pointsForSuccessPro = 0;
-        this.pointsForFailurePro = 0;
+        this.pointsForSuccessBeginner = 10;
+        this.pointsForFailureBeginner = 7;
+        this.pointsForSuccessPro = 20;
+        this.pointsForFailurePro = 17;
         this.isBeginnerMode = true;
     }
 

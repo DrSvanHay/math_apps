@@ -104,6 +104,82 @@ document.addEventListener('DOMContentLoaded', () => {
         draggedPoint = null;
     });
 
+// Code für touch-Support
+
+// Mausereignisse
+canvas.addEventListener('mousedown', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    points.forEach(point => {
+        if (isPointNear(mouseX, mouseY, point)) {
+            draggedPoint = point;
+        }
+    });
+});
+
+canvas.addEventListener('mousemove', (e) => {
+    if (draggedPoint) {
+        const rect = canvas.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+
+        const gridX = Math.round(mouseX / gridSize);
+        const gridY = Math.round(mouseY / gridSize);
+
+        draggedPoint.x = gridX;
+        draggedPoint.y = gridY;
+
+        drawGrid();
+        drawLines();
+        drawPoints();
+    }
+});
+
+canvas.addEventListener('mouseup', () => {
+    draggedPoint = null;
+});
+
+// Touchereignisse
+canvas.addEventListener('touchstart', (e) => {
+    e.preventDefault(); // Verhindert das Scrollen auf Mobilgeräten
+    const rect = canvas.getBoundingClientRect();
+    const touchX = e.touches[0].clientX - rect.left;
+    const touchY = e.touches[0].clientY - rect.top;
+
+    points.forEach(point => {
+        if (isPointNear(touchX, touchY, point)) {
+            draggedPoint = point;
+        }
+    });
+});
+
+canvas.addEventListener('touchmove', (e) => {
+    if (draggedPoint) {
+        e.preventDefault(); // Verhindert das Scrollen auf Mobilgeräten
+        const rect = canvas.getBoundingClientRect();
+        const touchX = e.touches[0].clientX - rect.left;
+        const touchY = e.touches[0].clientY - rect.top;
+
+        const gridX = Math.round(touchX / gridSize);
+        const gridY = Math.round(touchY / gridSize);
+
+        draggedPoint.x = gridX;
+        draggedPoint.y = gridY;
+
+        drawGrid();
+        drawLines();
+        drawPoints();
+    }
+});
+
+canvas.addEventListener('touchend', () => {
+    draggedPoint = null;
+});
+
+// Ende Code für touch-Support
+
 
     function setModeCallback(inMode) {
         if(inMode === globalModeManager.beginnerMode) {

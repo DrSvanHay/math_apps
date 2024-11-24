@@ -3,12 +3,14 @@ class SuccessManager {
         this.buttonId = buttonId;
         this.resultMessageElement = null;
         this.checkButtonElement = null;
+        this.locked = true;
 
         // Broadcaster-System für Callbacks (Liste von Callbacks)
         this.checkSuccessCallbacks = [];
         this.successCallbacks = [];
         this.noSuccessCallbacks = [];
         this.nextTaskCallbacks = [];
+
 
         this.handleCheck = this.handleCheck.bind(this);
     }
@@ -27,12 +29,18 @@ class SuccessManager {
 
         if (this.checkButtonElement) {
             this.checkButtonElement.addEventListener('click', this.handleCheck);
+            this.locked = false;
         } else {
             console.error(`Button mit ID ${this.buttonId} nicht gefunden.`);
         }
     }
 
     handleCheck() {
+
+        if(this.locked) return;
+        
+        this.locked = true;
+
         const originalText = this.checkButtonElement.textContent;
         const originalStyle = this.checkButtonElement.style.cssText; 
 
@@ -64,6 +72,8 @@ class SuccessManager {
             } else {
                 console.error(`Button mit ID ${this.buttonId} nicht gefunden.`);
             }
+
+            this.locked = false;
 
         }, 1500);
     }

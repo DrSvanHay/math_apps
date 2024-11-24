@@ -69,6 +69,7 @@ class ModeManager {
     setMode(mode) {
         if (mode !== this.currentMode) {
             this.currentMode = mode;
+            this.pendingMode = mode;
             this.broadcastModeChange();
             this.highlightModeButton(
                 mode === this.beginnerMode ? this.beginnerModeButton : this.proModeButton
